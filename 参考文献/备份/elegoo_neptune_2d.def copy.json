@@ -1,0 +1,145 @@
+{
+    "name":      "ELEGOO NEPTUNE 2D",
+    "version":   2,
+    "inherits":  "elegoo_base",
+    "metadata":  {
+                  "author": "Toylerrr&NARUTO",
+                  "visible": true,
+                  "quality_definition": "elegoo_base",
+                  "machine_extruder_trains":
+                   {
+                    "0": "elegoo_extruder_1",
+                    "1": "elegoo_extruder_2"
+                   }
+                 },
+    "overrides": {
+                  "machine_name":   {"default_value": "ELEGOO NEPTUNE 2D"},
+                  "machine_width":  {"default_value": 235},
+				  "machine_depth":  {"default_value": 235},
+                  "machine_height": {"default_value": 260},
+                  "machine_head_with_fans_polygon": { "value":  [ [-55, 20], [55, 20], [55, -25], [-55, -25] ] },
+                   "machine_extruder_count": { "default_value": 2 },
+                   "layer_start_x":{"value": "machine_width"},
+                   "layer_start_y":{"value": "machine_depth"},
+                   
+                  "machine_gcode_flavor": {"default_value": "Marlin"},
+                  "machine_use_extruder_offset_to_offset_coords":{"default_value": false},
+                  
+                  "machine_start_gcode" : 
+                  {"default_value": ";ELEGOO NEPTUNE 2D\n;Fool-proof Gcode\nG90\nG92 Z0;\nG1 Z5 F100;Lift the Z axis\nG28\nG90\nT1\nG92 E0\nG1 X1.5 Y20 Z1.0 E-10 F6000\nT0\nG92 E0\nG1 E-100 F1600\nT1\nG92 E0\nG1 Y200 E130 F250\nG91\nG1 E-{retraction_amount} F1600\nG1 E-101 F1600\nG90\nT0\nG92 E0\nG1 X0.5 E100 F3000\nG1 Y20 E230 F250\nG91\nG1 E-{retraction_amount} F1600\nG1 E-101 F1600\nG4 P5000\nG90\nT{extruder_nr}\nG92 E0\nG1 E{retraction_amount} F1600\nG92 E0"   
+                    },
+                  "machine_end_gcode" : 
+                  {"default_value": "G91\nG1 E-100 X5 Y5 Z3 F2400\nG90\nG1 X0 Y{machine_depth} ;\nM106 S0\nM104 S0\nM140 S0\nM84" 
+                  },
+                  
+                  "material_bed_temperature":{"value": "default_material_bed_temperature + 5"},
+                  "retraction_count_max":{"default_value": 200},
+                  "initial_layer_line_width_factor":{"settable_per_extruder": false },
+                    
+                    
+                  "machine_always_write_active_tool":
+                  {"default_value": false,
+                    "settable_per_mesh": false,
+                    "settable_per_extruder": false,
+                    "settable_per_meshgroup": false
+                  },
+
+
+
+                  "default_material_print_temperature":
+                  {
+                      "label": "Default Printing Temperature",
+                      "description": "The default temperature used for printing. This should be the \"base\" temperature of a material. All other print temperatures should use offsets based on this value",
+                      "unit": "°C",
+                      "type": "float",
+                      "default_value": 210,
+                      "minimum_value_warning": "0",
+                      "maximum_value_warning": "285",
+                      "maximum_value": "365",
+                      "enabled": false,
+                      "settable_per_extruder": true,
+                      "settable_per_mesh": false,
+                      "minimum_value": "-273.15"
+                  },
+                  "material_print_temperature":
+                  {
+                      "label": "Printing Temperature",
+                      "description": "The temperature used for printing.",
+                      "unit": "°C",
+                      "type": "float",
+                      "default_value": 210,
+                      "value": "default_material_print_temperature",
+                      "resolve": "max(extruderValues('material_print_temperature'))",
+                      "minimum_value": "-273.15",
+                      "minimum_value_warning": "0",
+                      "maximum_value_warning": "285",
+                      "maximum_value": "365",
+                      "enabled": "machine_nozzle_temp_enabled and not (material_flow_dependent_temperature)",
+                      "settable_per_mesh": false,
+                      "settable_per_extruder": false
+                  },
+                  "material_print_temperature_layer_0":
+                  {
+                      "label": "Printing Temperature Initial Layer",
+                      "description": "The temperature used for printing the first layer. Set at 0 to disable special handling of the initial layer.",
+                      "unit": "°C",
+                      "type": "float",
+                      "default_value": 215,
+                      "value": "material_print_temperature",
+                      "resolve": "max(extruderValues('material_print_temperature'))",
+                      "minimum_value": "-273.15",
+                      "minimum_value_warning": "0",
+                      "maximum_value_warning": "285",
+                      "maximum_value": "365",
+                      "enabled": "machine_nozzle_temp_enabled",
+                      "settable_per_mesh": false,
+                      "settable_per_extruder": false
+                  },
+                  "material_initial_print_temperature":
+                  {
+                      "label": "Initial Printing Temperature",
+                      "description": "The minimal temperature while heating up to the Printing Temperature at which printing can already start.",
+                      "unit": "°C",
+                      "type": "float",
+                      "default_value": 200,
+                      "value": "max(-273.15, material_print_temperature)",
+                      "resolve": "max(extruderValues('material_print_temperature'))",
+                      "minimum_value": "-273.15",
+                      "minimum_value_warning": "material_standby_temperature",
+                      "maximum_value_warning": "material_print_temperature",
+                      "maximum_value": "365",
+                      "enabled": "machine_nozzle_temp_enabled and not machine_extruders_share_heater",
+                      "settable_per_mesh": false,
+                      "settable_per_extruder": false
+                  },
+                  "material_final_print_temperature":
+                  {
+                      "label": "Final Printing Temperature",
+                      "description": "The temperature to which to already start cooling down just before the end of printing.",
+                      "unit": "°C",
+                      "type": "float",
+                      "default_value": 195,
+                      "value": "max(-273.15, material_print_temperature)",
+                      "resolve": "max(extruderValues('material_print_temperature'))",
+                      "minimum_value": "-273.15",
+                      "minimum_value_warning": "material_standby_temperature",
+                      "maximum_value_warning": "material_print_temperature",
+                      "maximum_value": "365",
+                      "enabled": "machine_nozzle_temp_enabled and not machine_extruders_share_heater",
+                      "settable_per_mesh": false,
+                      "settable_per_extruder": false
+                  },
+                  "material_standby_temperature":
+                  {   "value": "max(-273.15, material_print_temperature)",
+                      "resolve": "max(extruderValues('material_print_temperature'))",
+                      "enabled": "extruders_enabled_count > 1 and machine_nozzle_temp_enabled",
+                      "settable_per_mesh": false,
+                      "settable_per_extruder": false 
+                  }
+
+
+
+
+
+                 }
+}
