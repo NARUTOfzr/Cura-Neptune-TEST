@@ -129,7 +129,6 @@
           "brim_width":{"default_value": 5 },
           "brim_gap":{"default_value": 0.1},
           "cool_fan_full_at_height":{"value": "layer_height_0 if resolveOrValue('adhesion_type') == 'raft' else resolveOrValue('layer_height_0')+0.4"},
-          "wall_0_inset":{"value": "((machine_nozzle_size - wall_line_width_0)/2 + wall_line_width_0 / 20)  if (wall_line_width_0 < machine_nozzle_size and not outer_inset_first) else (machine_nozzle_size / 20)"},
           "retraction_combing":{"value": "'no_outer_surfaces' if (any(extruderValues('skin_monotonic')) or any(extruderValues('ironing_enabled')) or (any(extruderValues('roofing_monotonic')) and any(extruderValues('roofing_layer_count')))) else 'no_outer_surfaces'"},
           "retraction_combing_max_distance":{"value": "(infill_line_distance)*1.5 + 5  "},
           "travel_avoid_supports":{"default_value": false},
