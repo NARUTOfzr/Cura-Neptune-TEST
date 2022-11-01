@@ -4,7 +4,7 @@
     "inherits": "elegoo_extruder_base",
     "metadata": {
         "machine": "elegoo_base",
-        "position": "1"
+        "position": "2"
     },
 
     "overrides": {
