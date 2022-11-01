@@ -3,7 +3,7 @@
     "name": "Extruder 2",
     "inherits": "elegoo_extruder_base",
     "metadata": {
-        "machine": "elegoo_base",
+        "machine": "elegoo_neptune_2D",
         "position": "2"
     },
 

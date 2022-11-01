@@ -22,7 +22,7 @@
       "preferred_material": "generic_pla_175",
       "machine_extruder_trains":
             {
-                "0": "elegoo_extruder_0"
+                "0": "elegoo_neptune2_extruder_0"
             },
       "exclude_materials": [
         "generic_nylon_175",
@@ -127,7 +127,6 @@
           "retraction_combing":{"value": "'no_outer_surfaces' if (any(extruderValues('skin_monotonic')) or any(extruderValues('ironing_enabled')) or (any(extruderValues('roofing_monotonic')) and any(extruderValues('roofing_layer_count')))) else 'no_outer_surfaces'"},
           "retraction_combing_max_distance":{"value": "(infill_line_distance)*1.5 + 5  "},
           "travel_avoid_supports":{"default_value": false},
-          "material_flow_layer_0":{"value": "wall_material_flow * 1.05"},
           "infill_pattern":{"value": "'lines' if (infill_sparse_density > 35 or speed_print >= 80) else 'grid' "},
           "infill_sparse_density":{"default_value": 15},
           "zig_zaggify_infill":{"value": "infill_pattern == 'cross' or infill_pattern == 'cross_3d' or infill_sparse_density < 30 "},
