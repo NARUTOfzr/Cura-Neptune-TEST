@@ -8,8 +8,8 @@
                   "quality_definition": "elegoo_base",
                   "machine_extruder_trains":
                    {
-                    "1": "elegoo_extruder_1",
-                    "2": "elegoo_extruder_2"
+                    "0": "elegoo_extruder_1",
+                    "1": "elegoo_extruder_2"
                    }
                  },
     "overrides": {
