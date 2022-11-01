@@ -1,7 +1,7 @@
 {
     "version": 2,
     "name": "Extruder 1",
-    "inherits": "elegoo_extruder_base",
+    "inherits": "fdmextruder",
     "metadata": {
         "machine": "elegoo_base",
         "position": "0"
@@ -10,6 +10,12 @@
     "overrides": {
         "extruder_nr": {"default_value": 0},
         "material_diameter": { "default_value": 1.75 },
-        "machine_nozzle_size": { "default_value": 0.4 }
+        "machine_nozzle_size": { "default_value": 0.4 },
+        "machine_extruder_start_code": {
+            "default_value": ""
+            },
+        "machine_extruder_end_code": {
+            "default_value": ""
+            }
     }
 }
