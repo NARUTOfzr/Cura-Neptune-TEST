@@ -57,6 +57,7 @@
 
          "acceleration_enabled":{"value": true},
          "acceleration_print":{"default_value": 1000},
+         "acceleration_layer_0":{"default_value": 500},
          "acceleration_travel":{"value": "acceleration_print"},
          "speed_infill":{"value": "math.ceil(speed_wall + 35)"},
          "speed_wall_x":{"value": "speed_wall + 15"},
@@ -74,7 +75,6 @@
           "prime_tower_enable":{"enabled": "extruders_enabled_count > 1","default_value": true},
 
           "support_angle":{"value": "45 if speed_print > 99.9 else 50"},
-          "support_infill_rate":{"value": "5 if support_enable and support_structure == 'tree' else 15"},
           "gradual_support_infill_step_height":{"value": "5"},
           "support_infill_angles":{"default_value": "[65]"},
           "support_brim_enable":{"value": "support_structure == 'normal' or support_structure == 'tree'"},

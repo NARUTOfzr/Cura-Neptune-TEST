@@ -1,8 +1,14 @@
-# Cura5.0-Neptune-TEST
-这是关于Cura5.0的ELEGOO-Neptune机型配置文件。
+# Cura5.3.0-Neptune-TEST
 
-目前已添加的机型：Neptune2、Neptune2D、Neptune2S、NeptuneX、Neptune3、Neptune3Pro 。
+This configuration file is applicable to cura5.2-cura5.3.
 
-此为测试配置文件，仍在测试改进中。                                                                      
+Currently added models: Neptune2、Neptune2D、Neptune2S、NeptuneX、Neptune3、Neptune3Pro、。
 
-使用方法：将本文件夹中的“RESOURCES”文件夹拷贝到cura5.0安装目录的同名目录下，合并和替换原文件即可。
+To use: See documentation.
+
+
+该配置文件适用于cura5.2-cura5.3。
+
+目前已添加的机型：Neptune2、Neptune2D、Neptune2S、NeptuneX、Neptune3、Neptune3Pro、。
+                                                         
+使用方法：参见文档。
