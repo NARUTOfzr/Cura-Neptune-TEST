@@ -56,8 +56,8 @@
          "fill_outline_gaps": {"default_value": false},
 
          "acceleration_enabled":{"value": true},
-         "acceleration_print":{"default_value": 1000},
-         "acceleration_layer_0":{"default_value": 500},
+         "acceleration_print":{"value": 1000},
+         "acceleration_layer_0":{"value": 500},
          "acceleration_travel":{"value": "acceleration_print"},
          "speed_infill":{"value": "math.ceil(speed_wall + 35)"},
          "speed_wall_x":{"value": "speed_wall + 15"},
