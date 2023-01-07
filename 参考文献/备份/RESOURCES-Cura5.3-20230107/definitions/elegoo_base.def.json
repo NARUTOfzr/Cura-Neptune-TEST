@@ -15,10 +15,7 @@
       "has_machine_quality": true,
       "preferred_quality_type": "fine",
       "preferred_material": "generic_pla_175",
-      "machine_extruder_trains":
-            {
-                "0": "elegoo_neptune2_extruder_0"
-            },
+      "machine_extruder_trains":{"0": "elegoo_extruder_0"},
       "exclude_materials": [
         "generic_nylon_175",
         "generic_nylon",
@@ -74,7 +71,7 @@
          "speed_travel_layer_0": {"value": "70 if speed_layer_0 < 20 else 90 if speed_layer_0 > 40 else speed_layer_0+50"},
          "skirt_brim_speed":{"value": "speed_print_layer_0"},
          "speed_support": {"value": "speed_print if speed_wall > 0 and speed_wall < 40.01 else speed_wall + 40 "},
-         "initial_layer_line_width_factor":{"value": "100.0 if resolveOrValue('adhesion_type') == 'raft' or line_width > 0.55 else 130"},
+         "initial_layer_line_width_factor":{"value": "100.0 if resolveOrValue('adhesion_type') == 'raft' else 130 if line_width < 0.5 else 110"},
          "optimize_wall_printing_order":{"default_value": true },
          "z_seam_type":{"default_value": "back"},
           "z_seam_corner":{"default_value": "z_seam_corner_weighted"},

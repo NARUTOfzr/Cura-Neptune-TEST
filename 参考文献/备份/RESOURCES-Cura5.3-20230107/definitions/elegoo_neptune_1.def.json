@@ -5,8 +5,7 @@
     "metadata":  {
                   "author": "NARUTO",
                   "visible": true,
-                  "quality_definition": "elegoo_base",
-                  "machine_extruder_trains":{"0": "elegoo_neptune2_extruder_0"}
+                  "quality_definition": "elegoo_base"
                   },
     "overrides": {
                   "machine_name":   {"default_value": "ELEGOO NEPTUNE"},
