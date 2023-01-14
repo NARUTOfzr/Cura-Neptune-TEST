@@ -1,3 +1,9 @@
+# Update reminder:
+- The relevant profiles have been incorporated into the official Cura.Let's look forward to the cura version update.
+
+
+
+
 # Cura5.3.0-Neptune-TEST
 
 This configuration file is applicable to cura5.2-cura5.3.
