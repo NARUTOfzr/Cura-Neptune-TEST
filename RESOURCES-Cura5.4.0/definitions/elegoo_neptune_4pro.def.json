@@ -10,9 +10,9 @@
                  },
     "overrides": {
                   "machine_name":   {"default_value": "ELEGOO NEPTUNE 4 Pro"},
-                  "machine_width":  {"default_value": 235},
-                  "machine_depth":  {"default_value": 235},
-                  "machine_height": {"default_value": 280},
+                  "machine_width":  {"default_value": 225},
+                  "machine_depth":  {"default_value": 225},
+                  "machine_height": {"default_value": 265},
                   "machine_head_with_fans_polygon": { "value":  [ [-55, 30], [55, 30], [55, -35], [-55, -35] ] },
                   "speed_travel":{"value": "300 if speed_print < 300 else speed_print * 1.25 if speed_print < 400 else 500 "},
                   "speed_travel_layer_0": {"value": "200"},
